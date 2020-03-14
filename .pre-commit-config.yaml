@@ -14,3 +14,9 @@ repos:
         entry: git reset HEAD **/*.ipynb
         pass_filenames: false
         language: system
+      -
+        id: unstage-ipynb
+        name: unstage-ipynb
+        entry: make pre-commit-dvc
+        pass_filenames: false
+        language: system

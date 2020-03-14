@@ -16,11 +16,13 @@ ifneq ($(ALL_NOTEBOOKS),)
 	$(POETRY_RUN) jupytext --from ipynb --to py:percent $(ALL_NOTEBOOKS)
 endif
 
-
 py-to-nb:
 ifneq ($(ALL_PY_NOTEBOOKS),)
 	$(POETRY_RUN) jupytext --from py:percent --to ipynb $(ALL_PY_NOTEBOOKS)
 endif
+
+pre-commit-dvc:
+	$(POETRY_RUN) dvc status
 
 format:
 	$(POETRY_RUN) isort -rc $(SOURCES_FOLDER)

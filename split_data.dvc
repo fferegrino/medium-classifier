@@ -1,0 +1,18 @@
+md5: ac7bc8f5ef70f6143bf9c19140c6898e
+cmd: python src/split_data.py data/articles_filtered.csv data/splits/ --stratify
+deps:
+- md5: de079719395752749786d7b2a597e601
+  path: src/split_data.py
+- md5: d1ca66ba38c89e44a8b73bbf586e2120
+  path: data/articles_filtered.csv
+outs:
+- md5: d8ed2e1c5662db720951c17c6c6b5ca1
+  path: data/splits/train.csv
+  cache: true
+  metric: false
+  persist: false
+- md5: 7dbd6478ccea22549387ba4f78b2818d
+  path: data/splits/test.csv
+  cache: true
+  metric: false
+  persist: false

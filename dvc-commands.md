@@ -12,3 +12,44 @@ dvc run -f filter_by_topic.dvc \
     python src/filter_by_topic.py data/articles_mails.csv data/articles_filtered.csv
 ```
  
+## Generate data splits
+
+This splits the data as we want it to be
+
+```shell script
+dvc run -f split_data.dvc \
+    -d src/split_data.py -d data/articles_filtered.csv \
+    -o data/splits/train.csv -o data/splits/test.csv \
+    python src/split_data.py data/articles_filtered.csv data/splits/ --stratify
+```
+ 
+## Vectorise text
+
+This splits the data as we want it to be
+
+```shell script
+dvc run -f vectorise_text.dvc \
+    -d src/vectorise_text.py -d src/tokenisation.py -d data/splits/ \
+    -o data/features/training_text_vectors.npz -o data/features/testing_text_vectors.npz -o models/text_vectoriser.pkl \
+    python src/vectorise_text.py data/splits data/features models --max-features 1500
+```
+ 
+## Train a model
+
+Train a basic LinearSVC
+
+```shell script
+dvc run -f train.dvc \
+    -d src/train.py -d data/splits/train.csv -d data/features/training_text_vectors.npz \
+    -o models/medium-predictor.pkl \
+    python src/train.py data/features data/splits models
+```
+
+## Evaluate a model
+
+```shell script
+dvc run -f evaluate.dvc \
+    -d src/evaluate.py -d models/medium-predictor.pkl -d data/splits/test.csv -d data/features/testing_text_vectors.npz \
+    -M metrics/accuracy.txt \
+    python src/evaluate.py data/features data/splits models/medium-predictor.pkl metrics/accuracy.txt
+```

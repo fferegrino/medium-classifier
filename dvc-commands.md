@@ -44,3 +44,12 @@ dvc run -f train.dvc \
     -o models/medium-predictor.pkl \
     python src/train.py data/features data/splits models
 ```
+
+## Evaluate a model
+
+```shell script
+dvc run -f evaluate.dvc \
+    -d src/evaluate.py -d models/medium-predictor.pkl -d data/splits/test.csv -d data/features/testing_text_vectors.npz \
+    -M metrics/accuracy.txt
+    python src/evaluate.py data/features data/splits models/medium-predictor.pkl metrics/accuracy.txt
+```

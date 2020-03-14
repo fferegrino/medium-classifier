@@ -12,3 +12,13 @@ dvc run -f filter_by_topic.dvc \
     python src/filter_by_topic.py data/articles_mails.csv data/articles_filtered.csv
 ```
  
+## Generate data splits
+
+This splits the data as we want it to be
+
+```shell script
+dvc run -f split_data.dvc \
+    -d src/split_data.py -d data/articles_filtered.csv \
+    -o data/splits/train.csv -o data/splits/test.csv \
+    python src/split_data.py data/articles_filtered.csv data/splits/ --stratify
+```

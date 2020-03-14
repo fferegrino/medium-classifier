@@ -15,8 +15,8 @@ repos:
         pass_filenames: false
         language: system
       -
-        id: unstage-ipynb
-        name: unstage-ipynb
+        id: check-dvc
+        name: check-dvc
         entry: make pre-commit-dvc
         pass_filenames: false
         language: system

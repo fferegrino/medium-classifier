@@ -1,0 +1,13 @@
+md5: 017f6f710b585081e9016dee658d78c5
+cmd: python src/filter_by_topic.py data/articles_mails.csv data/articles_filtered.csv
+deps:
+- md5: 874633d75920ac4ef6bc37b22bef4add
+  path: src/filter_by_topic.py
+- md5: 8ce544d400735f79d4d6003bcf8318e8
+  path: data/articles_mails.csv
+outs:
+- md5: ddf497145543cc5686b9a42a8a243486
+  path: data/articles_filtered.csv
+  cache: true
+  metric: false
+  persist: false

@@ -17,6 +17,6 @@ repos:
       -
         id: check-dvc
         name: check-dvc
-        entry: make pre-commit-dvc
+        entry: poetry run dvc status
         pass_filenames: false
         language: system

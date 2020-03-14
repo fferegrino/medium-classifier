@@ -1,4 +1,4 @@
-md5: c130dcdf4f4d3583cfa6e2b91521f819
+md5: 1cc7ad0bf0284e7ac5187354fd086653
 cmd: python src/train.py data/features data/splits models
 deps:
 - md5: ce22bc286a3518a25600f0d423d7c5c4
@@ -8,7 +8,7 @@ deps:
 - md5: 9a45d082c0430efeedbddf2249b6ac29
   path: data/features/training_text_vectors.npz
 outs:
-- md5: fa4e1203f87d47015c507283da942499
+- md5: 3c62b6cf7a63e991aa42da1d1fecd322
   path: models/medium-predictor.pkl
   cache: true
   metric: false

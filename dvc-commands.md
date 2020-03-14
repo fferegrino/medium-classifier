@@ -33,3 +33,14 @@ dvc run -f vectorise_text.dvc \
     -o data/features/training_text_vectors.npz -o data/features/testing_text_vectors.npz -o models/text_vectoriser.pkl \
     python src/vectorise_text.py data/splits data/features models --max-features 1500
 ```
+ 
+## Train a model
+
+Train a basic LinearSVC
+
+```shell script
+dvc run -f train.dvc \
+    -d src/train.py -d data/splits/train.csv -d data/features/training_text_vectors.npz \
+    -o models/medium-predictor.pkl \
+    python src/train.py data/features data/splits models
+```

@@ -1,4 +1,4 @@
-md5: e07da45322acaaa625d2a9544553ea48
+md5: 4063c22b7936511ed4194611e0ed2d15
 cmd: python src/evaluate.py data/features data/splits models/medium-predictor.pkl
   metrics/accuracy.txt
 deps:
@@ -8,7 +8,7 @@ deps:
   path: models/medium-predictor.pkl
 - md5: 7dbd6478ccea22549387ba4f78b2818d
   path: data/splits/test.csv
-- md5: 14531300dc3cca967970962ad040ea36
+- md5: 518a014e763f5ad56c65b13a0a45c203
   path: data/features/testing_text_vectors.npz
 outs:
 - md5: 233b2d95a8127a8d2b45696937f7419c

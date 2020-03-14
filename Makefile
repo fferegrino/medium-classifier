@@ -22,7 +22,7 @@ ifneq ($(ALL_PY_NOTEBOOKS),)
 endif
 
 pre-commit-dvc:
-	$(POETRY_RUN) dvc status
+	$(POETRY_RUN) dvc status -q
 
 format:
 	$(POETRY_RUN) isort -rc $(SOURCES_FOLDER)

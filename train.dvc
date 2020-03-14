@@ -1,11 +1,11 @@
-md5: a0e66c582e351b0150b6a255ae085f22
+md5: fb54829dfc44781ec76347ac71392367
 cmd: python src/train.py data/features data/splits models
 deps:
 - md5: ce22bc286a3518a25600f0d423d7c5c4
   path: src/train.py
 - md5: d8ed2e1c5662db720951c17c6c6b5ca1
   path: data/splits/train.csv
-- md5: 357251a6fe4400964c9711d298adf02a
+- md5: 764295eee145f6b6a0a5e432121cba5b
   path: data/features/training_text_vectors.npz
 outs:
 - md5: 9f59012bc3b6892a66e1ec1b4d573d34

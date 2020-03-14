@@ -1,25 +1,25 @@
-md5: 61c144ab9f5eefef29ad4a8d01298b00
+md5: 83f461391b4d6649389deae2807449f8
 cmd: python src/vectorise_text.py data/splits data/features models --max-features
-  15
+  1000
 deps:
-- md5: c99d17ec50e394ca547e2f71fb3fab39
+- md5: 00bd2be12fc499da332dea35312aa2ba
   path: src/vectorise_text.py
 - md5: a678ae543865ce979e1196892daeab3e
   path: src/tokenisation.py
 - md5: a45638ab2d6e8760286e450b04485e6d.dir
   path: data/splits
 outs:
-- md5: d07d7054ac914496df3dd17b862abc7c
+- md5: 32adbca8be8262ddcb6c88bd81c7aa9d
   path: data/features/training_text_vectors.npz
   cache: true
   metric: false
   persist: false
-- md5: c80398604d17fd64dd2f0c560655ba87
+- md5: 82e79b98084b22c566d48ba4ffc08aae
   path: data/features/testing_text_vectors.npz
   cache: true
   metric: false
   persist: false
-- md5: e3e3b97af70492d01d5619f66a45f0db
+- md5: e8d33eb69e9cc078c15564cb71f4aba3
   path: models/text_vectoriser.pkl
   cache: true
   metric: false

@@ -1,15 +1,17 @@
-md5: d340918162589855842a2c48a9d0507c
+md5: f1c682974315c83f6ed54defd3675245
+cmd: python src/evaluate.py data/features data/splits models/medium-predictor.pkl
+  metrics/accuracy.txt
 deps:
 - md5: 2e5ed9109c26c434019e50ed0c0a4f84
   path: src/evaluate.py
-- md5: 3c62b6cf7a63e991aa42da1d1fecd322
+- md5: 0e6e9a91c6261c97608b56af6527e00d
   path: models/medium-predictor.pkl
 - md5: 7dbd6478ccea22549387ba4f78b2818d
   path: data/splits/test.csv
-- md5: d17fa5a944a43e36d52c841b0e7365aa
+- md5: 82e79b98084b22c566d48ba4ffc08aae
   path: data/features/testing_text_vectors.npz
 outs:
-- md5: 4665b3c97f7d543cd4eb4520e07fe8cd
+- md5: f98bb3cfb398dc83fbd54b08181dff50
   path: metrics/accuracy.txt
   cache: false
   metric: true

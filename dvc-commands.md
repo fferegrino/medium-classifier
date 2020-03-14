@@ -50,6 +50,6 @@ dvc run -f train.dvc \
 ```shell script
 dvc run -f evaluate.dvc \
     -d src/evaluate.py -d models/medium-predictor.pkl -d data/splits/test.csv -d data/features/testing_text_vectors.npz \
-    -M metrics/accuracy.txt
+    -M metrics/accuracy.txt \
     python src/evaluate.py data/features data/splits models/medium-predictor.pkl metrics/accuracy.txt
 ```

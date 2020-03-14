@@ -1,0 +1,16 @@
+repos:
+  -
+    repo: local
+    hooks:
+      -
+        id: jupytext
+        name: jupytext
+        entry: make nb-to-py
+        pass_filenames: false
+        language: system
+      -
+        id: unstage-ipynb
+        name: unstage-ipynb
+        entry: git reset HEAD **/*.ipynb
+        pass_filenames: false
+        language: system

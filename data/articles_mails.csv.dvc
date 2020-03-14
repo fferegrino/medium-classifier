@@ -1,0 +1,7 @@
+md5: 592845a16ce7f004b25f632f91d65b08
+outs:
+- md5: 8ce544d400735f79d4d6003bcf8318e8
+  path: articles_mails.csv
+  cache: true
+  metric: false
+  persist: false

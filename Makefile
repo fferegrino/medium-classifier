@@ -9,6 +9,7 @@ SOURCES_FOLDER=src
 init:
 	$(POETRY) install
 	$(POETRY_RUN) pre-commit install
+	$(POETRY_RUN) python -c 'import nltk; nltk.download("stopwords")'
 
 nb-to-py:
 ifneq ($(ALL_NOTEBOOKS),)

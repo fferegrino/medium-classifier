@@ -22,3 +22,14 @@ dvc run -f split_data.dvc \
     -o data/splits/train.csv -o data/splits/test.csv \
     python src/split_data.py data/articles_filtered.csv data/splits/ --stratify
 ```
+ 
+## Vectorise text
+
+This splits the data as we want it to be
+
+```shell script
+dvc run -f vectorise_text.dvc \
+    -d src/vectorise_text.py -d src/tokenisation.py -d data/splits/ \
+    -o data/features/training_text_vectors.npz -o data/features/testing_text_vectors.npz -o models/text_vectoriser.pkl \
+    python src/vectorise_text.py data/splits data/features models --max-features 1500
+```
